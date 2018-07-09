@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from tkinter import Tk
 from tkinter import filedialog
 from uuid import uuid4
