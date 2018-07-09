@@ -3,6 +3,7 @@ from tkinter import filedialog
 from uuid import uuid4
 import os.path
 import sys
+import pyperclip
 
 def main_gui():
     home = os.path.expanduser('~')
@@ -13,12 +14,12 @@ def main_gui():
         initialdir=home)
     if not out_dir:
         sys.exit()
-    root.destroy()
-    print(out_dir)
     uuid = uuid4().hex
-    print(uuid)
-    open(os.path.join(out_dir, 'uuid-{}'.format(uuid)), 'a').close()
- 
-    
+    fn = 'uuid-{}'.format(uuid)
+    path = os.path.join(out_dir, fn)
+    open(path, 'a').close()
+    pyperclip.copy(fn)
+    root.destroy()
+
 if __name__ == '__main__':
     main_gui()
