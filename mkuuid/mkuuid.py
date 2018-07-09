@@ -1,23 +1,21 @@
 from tkinter import Tk
 from tkinter import filedialog
 from uuid import uuid4
-import os.path
-import sys
+from os import path, getcwd
+from sys import exit
 
 def main_gui():
-    home = os.path.expanduser('~')
+    cwd = getcwd()
     root = Tk()
     root.withdraw()
     out_dir = filedialog.askdirectory(
         title='Choose output directory for UUID file',
-        initialdir=home)
+        initialdir=cwd)
     if not out_dir:
-        sys.exit()
+        exit()
     root.destroy()
-    print(out_dir)
     uuid = uuid4().hex
-    print(uuid)
-    open(os.path.join(out_dir, 'uuid-{}'.format(uuid)), 'a').close()
+    open(path.join(out_dir, 'uuid-{}'.format(uuid)), 'a').close()
  
     
 if __name__ == '__main__':
