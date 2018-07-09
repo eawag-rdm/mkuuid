@@ -3,6 +3,7 @@ from tkinter import filedialog
 from uuid import uuid4
 from os import path, getcwd
 from sys import exit
+import pyperclip
 
 def main_gui():
     cwd = getcwd()
@@ -13,9 +14,12 @@ def main_gui():
         initialdir=cwd)
     if not out_dir:
         exit()
-    root.destroy()
     uuid = uuid4().hex
-    open(path.join(out_dir, 'uuid-{}'.format(uuid)), 'a').close()
+    fn = 'uuid-{}'.format(uuid)
+    path = path.join(out_dir, fn)
+    open(path, 'a').close()
+    pyperclip.copy(fn)
+    root.destroy()
  
     
 if __name__ == '__main__':
