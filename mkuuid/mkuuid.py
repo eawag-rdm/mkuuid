@@ -21,7 +21,6 @@ def main_gui():
     open(path, 'a').close()
     pyperclip.copy(fn)
     root.destroy()
- 
-    
+
 if __name__ == '__main__':
     main_gui()
