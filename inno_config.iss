@@ -20,7 +20,6 @@ OutputDir=C:\Users\vonwalha\mkuuid
 OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
-PrivilegesRequired=lowest
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
