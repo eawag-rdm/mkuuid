@@ -20,6 +20,6 @@ and put it in a convenient location.
 
 When you run this you are presented with a directory-chooser. Select the
 directory in which you want to have the unique ID and click "OK". An
-empty file with the name "uuid-<long random unique number>" will be
+empty file with the name *uuid-&lt;long random unique number&gt;* will be
 created there. This ID will be also in the clipboard, so you can
 directly paste it into the metadata-file.
